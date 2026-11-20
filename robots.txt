@@ -1,0 +1,5 @@
+# TODO: update the Sitemap URL when the domain is purchased.
+User-agent: *
+Allow: /
+
+Sitemap: https://lemonstudiocy.com/sitemap.xml
