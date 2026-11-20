@@ -1,4 +1,3 @@
-# TODO: update the Sitemap URL when the domain is purchased.
 User-agent: *
 Allow: /
 

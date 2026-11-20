@@ -34,3 +34,53 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+      - name: Ping IndexNow
+        if: success()
+        continue-on-error: true
+        run: |
+          python3 << 'PY'
+          import json
+          import re
+          import sys
+          import urllib.request
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          matches = [
+              path
+              for path in Path(".").glob("*.txt")
+              if re.fullmatch(r"[0-9a-f]{32}", path.stem)
+              and path.read_text(encoding="utf-8").strip() == path.stem
+          ]
+          if len(matches) != 1:
+              print(f"IndexNow key file not found ({len(matches)} matches). Skipping.")
+              sys.exit(0)
+          key = matches[0].stem
+          ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+          urls = [
+              loc.text.strip()
+              for loc in ET.parse("sitemap.xml").findall(".//s:loc", ns)
+              if loc.text and loc.text.strip().startswith("https://lemonstudiocy.com/")
+          ]
+          payload = {
+              "host": "lemonstudiocy.com",
+              "key": key,
+              "keyLocation": f"https://lemonstudiocy.com/{key}.txt",
+              "urlList": urls,
+          }
+          request = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=json.dumps(payload).encode(),
+              headers={
+                  "Content-Type": "application/json; charset=utf-8",
+                  "User-Agent": "lemonstudio-indexnow",
+              },
+              method="POST",
+          )
+          try:
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  print("IndexNow", response.status, response.read(300).decode(errors="replace"))
+          except Exception as exc:
+              print(f"IndexNow not submitted ({exc}). DNS for lemonstudiocy.com may not resolve yet.")
+              sys.exit(0)
+          PY
