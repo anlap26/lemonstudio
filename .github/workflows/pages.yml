@@ -62,6 +62,9 @@ jobs:
               for loc in ET.parse("sitemap.xml").findall(".//s:loc", ns)
               if loc.text and loc.text.strip().startswith("https://lemonstudiocy.com/")
           ]
+          print(f"IndexNow submitting {len(urls)} urls")
+          for url in urls:
+              print(url)
           payload = {
               "host": "lemonstudiocy.com",
               "key": key,
