@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page not found | Lemon Studio</title>
   <meta name="robots" content="noindex">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#09090b">
   <style>
     :root { --lemon:#e8f14a; --bg:#09090b; --text:#f6f6f3; --muted:#9b9ba3; }
     * { box-sizing: border-box; }
@@ -17,7 +22,7 @@
       padding: 2rem;
       text-align: center;
     }
-    img { width: 56px; height: 56px; border-radius: 14px; margin: 0 auto 1.4rem; }
+    img.brand-logo { width: auto; height: 40px; max-width: min(280px, 78vw); border-radius: 0; margin: 0 auto 1.4rem; }
     h1 { font-family: Unbounded, Inter, sans-serif; font-size: clamp(2.4rem, 8vw, 5rem); letter-spacing: -0.05em; line-height: .95; margin: 0 0 1rem; }
     h1 span { color: var(--lemon); }
     p { color: var(--muted); max-width: 28rem; margin: 0 auto 1.6rem; }
@@ -32,7 +37,7 @@
 <body>
   <!-- Root paths for https://lemonstudiocy.com/ (404.html is served for any missing path). -->
   <div>
-    <img src="/assets/logo.svg" alt="Lemon Studio">
+    <img class="brand-logo" src="/assets/brand/logo-horizontal-dark.svg" width="130" height="40" alt="Lemon Studio">
     <h1>This page<br><span>is not here.</span></h1>
     <p>The address may have changed. Head back to the Lemon Studio site and start again.</p>
     <a href="/">Back to Lemon Studio</a>

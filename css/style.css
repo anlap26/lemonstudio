@@ -96,9 +96,14 @@ body::before {
   white-space: nowrap;
 }
 .brand img {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+  width: auto;
+  height: 28px;
+  border-radius: 0;
+}
+.site-footer .brand img { height: 26px; }
+@media (min-width: 768px) {
+  .site-header .brand img { height: 38px; }
+  .site-footer .brand img { height: 34px; }
 }
 .nav {
   display: none;
