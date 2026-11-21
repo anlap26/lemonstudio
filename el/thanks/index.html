@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ευχαριστούμε | Lemon Studio</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#09090b">
+  <style>
+    :root { --lemon:#e8f14a; --bg:#09090b; --text:#f6f6f3; --muted:#9b9ba3; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      background: var(--bg); color: var(--text);
+      font-family: Inter, system-ui, sans-serif;
+      background-image: radial-gradient(700px 400px at 80% 0, rgba(232,241,74,.12), transparent 60%);
+      padding: 2rem;
+      text-align: center;
+    }
+    img.brand-logo { width: auto; height: 40px; max-width: min(280px, 78vw); border-radius: 0; margin: 0 auto 1.4rem; }
+    h1 { font-family: Unbounded, Inter, sans-serif; font-size: clamp(2.4rem, 8vw, 5rem); letter-spacing: -0.05em; line-height: .95; margin: 0 0 1rem; }
+    h1 span { color: var(--lemon); }
+    p { color: var(--muted); max-width: 28rem; margin: 0 auto 1.6rem; }
+    a { color: #111208; background: var(--lemon); text-decoration: none; font-weight: 600; padding: .8rem 1.2rem; border-radius: 999px; display: inline-block; }
+    .langs { margin-top: 1.4rem; display: flex; gap: .8rem; justify-content: center; }
+    .langs a { background: transparent; color: var(--muted); padding: .3rem .5rem; font-size: .85rem; }
+    .langs a:hover { color: var(--lemon); }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Unbounded:wght@800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div>
+    <img class="brand-logo" src="/assets/brand/logo-horizontal-dark.svg" width="130" height="40" alt="Lemon Studio">
+    <h1>Ευχαριστούμε!<br><span>Θα απαντήσουμε σύντομα.</span></h1>
+    <p>Θα απαντήσουμε μέσα σε μία εργάσιμη ημέρα.</p>
+    <a href="/el/">Πίσω στη Lemon Studio</a>
+    <div class="langs">
+      <a href="/">EN</a>
+      <a href="/ru/">RU</a>
+      <a href="/el/">EL</a>
+    </div>
+  </div>
+</body>
+</html>
